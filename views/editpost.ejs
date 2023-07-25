@@ -1,0 +1,35 @@
+<%- include("header") -%>
+
+<div class='container pt-5 pb-5'>
+    <h3> Edit Your Article</h3><hr/>
+
+    <form action="/edit" method="post">
+        <input type="hidden" value="<%= post._id %>" name="pid">
+        <div class="mb-3">
+        <input type="text" placeholder="Article Title" class="form-control" name="title" value=" <%= post.title %>">
+    </div>
+
+    <div class="mb-3">
+        <input type="url" placeholder="Paste image url" class="form-control" name="image" value=" <%= post.imageurl %>">
+    </div>
+
+    <div class="mb-3">
+        <textarea placeholder="Type content here ..." class="form-control" name="content" rows="7"> <%= post.content %></textarea>
+    </div>
+    <div class="row">
+        <div class="col-2">
+            <button class='btn btn-success' type="submit">Update Article</button>
+        </div>
+       
+    </div>
+    </form>
+
+    <% if (result!='') { %>
+  <div class=' alert alert-success'> ✔ <h2 ><%= result %></h2></div>
+    <% } %>
+
+
+</div>
+
+
+<%- include("footer") -%>

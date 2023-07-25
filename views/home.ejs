@@ -1,0 +1,27 @@
+<%- include("header") -%>
+
+<div class='container pt-5 pb-5'>
+    <h3>Articles</h3><hr/>
+<div class="row">
+
+  <% posts.forEach(function(post){ %>
+    <div class="col-4">
+
+        <div class="card">
+            <img src="<%= post.imageurl %>" class="card-img-top w-100" alt="..." height="250px">
+            <div class="card-body">
+              <h5 class="card-title"><%= post.title %></h5>
+              
+              <a href="/viewpost/<%= post._id %>" class="btn btn-primary">Read More</a>
+              
+            </div>
+          </div>
+    </div>
+
+    <% }); %>
+
+</div>
+</div>
+
+
+<%- include("footer") -%>

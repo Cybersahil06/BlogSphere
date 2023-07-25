@@ -1,0 +1,22 @@
+<%- include("header") -%>
+
+<div class="container pt-5 pb-5">
+    <h3> <%= post.title %></h3>  <hr>
+
+    <img src="<%= post.imageurl %>" class="w-75" height="350px"> 
+
+    <div> <%= post.content %></div>
+<br>
+    <p> Added On: <%= post.postDate %></p>
+
+
+    <form action="/delpost" method="post">
+        <input type="hidden" value="<%= post._id %>" name="pid">
+        <button type="submit" class="btn btn-danger btn-sm"> Delete Article</button>
+        
+        <a href="/editpost/<%= post._id %>" class="btn btn-primary btn-sm">Edit Article</a>
+    </form>
+    
+</div>
+
+<%- include("footer") -%>
